@@ -7,10 +7,8 @@ import movieTrailer from 'movie-trailer'
 const base_url = 'https://image.tmdb.org/t/p/original/'
 
 function Row({ title, fetchUrl, isLargeRow }) {
-
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState([])
     const [trailerUrl, setTrailerUrl] = useState('')
-    //A snipet of code runs based on a specific condition
 
     useEffect(() => {
         async function fetchData() {
@@ -20,7 +18,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
             return request
         }
         fetchData()
-    }, [fetchUrl]);
+    }, [fetchUrl])
 
     const opts = {
         height: '390',
@@ -45,7 +43,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
         }
     }
 
-    //console.table(movies);
     return (
         <div className="row">
             <h2>{title}</h2>
